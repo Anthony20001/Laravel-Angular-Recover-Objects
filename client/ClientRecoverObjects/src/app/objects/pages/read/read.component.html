@@ -1,0 +1,55 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-10">
+            <h1 class="mb-4 mt-5">  Objetos perdidos</h1>
+        </div>
+        <div class="col">
+            <a href="" class="btn btn-success mb-4 mt-5">Crear registro</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <table class="table table-secondary " style="overflow: scroll;">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Objeto</th>
+                        <th>Tipo de objeto</th>
+                        <th>Color</th>
+                        <th>Precio</th>
+                        <th>Detalles</th>
+                        <th>Casillero</th>
+                        <th>Estado</th>
+                        <th [width]="50">Imagen</th>
+                        <th>Actualizado el</th>
+                        <th>Creado el</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="table-light text-center">
+                    <tr *ngFor="let item of objetos">
+                        <th class="fw-normal">{{item.id}}</th>
+                        <th class="fw-normal">{{item.nombre_objeto}}</th>
+                        <th class="fw-normal">{{item.tipo_objeto}}</th>
+                        <th class="fw-normal">{{item.color}}</th>
+                        <th class="fw-normal">{{item.precio}}</th>
+                        <th class="fw-normal">{{item.detalles}}</th>
+                        <th class="fw-normal">{{item.casillero}}</th>
+                        <th class="fw-normal">{{item.estado}}</th>
+                        <th class="fw-normal" [width]="50"><img src="{{item.url_img}}" alt="" width="100%"></th>
+                        <th class="fw-normal">{{item.updated_at}}</th>
+                        <th class="fw-normal">{{item.created_at}}</th>
+                        <th><button class="btn btn-sm btn-primary">Editar</button></th>
+                        <th><button class="btn btn-sm btn-danger">Eliminar</button></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+<router-outlet></router-outlet>

@@ -1,0 +1,45 @@
+<app-navbar></app-navbar>
+
+<div class="container-fluid">
+    <h1 class="mb-4 mt-5">Solicitudes de recuperación</h1>
+
+    <div class="row">
+        <div class="col">
+            <table class="table table-secondary">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Cédula</th>
+                        <th>Objeto</th>
+                        <th>Color</th>
+                        <th>Precio</th>
+                        <th>Detalles</th>
+                        <th>Tipo de objeto</th>
+                        <th>Actualizado el</th>
+                        <th>Creado el</th>
+                        <th></th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody class="table-light">
+                    <tr *ngFor="let item of solicitudes">
+                        <th class="fw-normal">{{item.id}}</th>
+                        <th class="fw-normal">{{item.cedula}}</th>
+                        <th class="fw-normal">{{item.nombre_objeto}}</th>
+                        <th class="fw-normal">{{item.color}}</th>
+                        <th class="fw-normal">{{item.precio}}</th>
+                        <th class="fw-normal">{{item.detalles}}</th>
+                        <th class="fw-normal">{{item.tipo_objeto}}</th>
+                        <th class="fw-normal">{{item.created_at}}</th>
+                        <th class="fw-normal">{{item.updated_at}}</th>
+                        
+                        <th><button class="btn btn-sm btn-primary">Editar</button></th>
+                        <th><button class="btn btn-sm btn-danger" (click)="delete(item.id)">Eliminar</button></th>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</div>
+<router-outlet></router-outlet>
